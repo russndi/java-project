@@ -14,7 +14,7 @@ pipeline {
     }
     stage ("Deploy") {
       steps {
-        sh 'aws s3 cp rectangle-16.jar s3://russmin-jenkinsbucket'
+        sh 'aws s3 cp rectangle-18.jar s3://russmin-jenkinsbucket'
       }
     }
   }
