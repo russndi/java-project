@@ -1,6 +1,6 @@
 
 pipeline {
   stage ("Unit Tests") {
-    ant -f test.xml -v
+   sh 'ant -f test.xml -v'
   }
 }
