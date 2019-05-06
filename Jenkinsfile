@@ -14,8 +14,18 @@ pipeline {
     }
     stage ("Deploy") {
       steps {
-        sh 'aws s3 cp dist/rectangle-31.jar s3://russmin-jenkinsbucket/rectangle.jar'
+        sh 'aws s3 cp dist/rectangle-32.jar s3://russmin-jenkinsbucket/rectangle1.jar'
       }
     }
+    stage ("Report") {  
+      steps { withCredentials ([[
+        $class: 'AmazonWebServicesCredentialsBinding', 
+        accessKeyVariable: 'AWS_ACCESS_KEY_ID', 
+        credentialsId: 'AWS-Credentials-for-Jenkins', 
+        secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+      ]]) {
+          sh 'aws aws cloudformation describe- stack-resources --region us-east-1 --stack-name jenkins' 
+            }
+          }
   }
 }
