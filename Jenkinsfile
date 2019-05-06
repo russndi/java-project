@@ -14,7 +14,7 @@ pipeline {
     }
     stage ("Deploy") {
       steps {
-        sh 'aws s3 cp /workspace/java-pipeline2/dist/rectangle-26.jar s3://russmin-jenkinsbucket/rectangle11.jar'
+        sh 'aws s3 cp /workspace/java-pipeline2/dist/rectangle-27.jar s3://russmin-jenkinsbucket/rectangleone.jar'
       }
     }
     stage ("Report") {  
