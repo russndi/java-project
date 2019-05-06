@@ -17,7 +17,5 @@ pipeline {
         sh 'aws s3 cp /workspace/java-pipeline2/dist/rectangle-28.jar s3://russmin-jenkinsbucket/rect.jar'
       }
     }
-    
-    }
   }
 }
